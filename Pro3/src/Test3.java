@@ -1,107 +1,245 @@
 import java.io.*;
 import javax.swing.JOptionPane;
 import java.util.*;
-public class Test3 {
-
-	public static void main(String[] args) 
+public class Test3 
+{
+	Scanner gold = new Scanner(System.in);
+	int num1,num2,num3,num4,num5,num6,num7,num8,num9,sum;
+	
+	public void getData()
 	{
-		Scanner gold = new Scanner(System.in);
-		int round,num1=0,num2=0,num3=0;
-		String Adrian,Bruno,Goran,answer="";
-		Adrian="ABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABC";
-		Bruno="BABCBABCBABCBABCBABCBABCBABCBABCBABCBABCBABCBABCBABCBABCBABC";
-		Goran="CCAABBCCAABBCCAABBCCAABBCCAABBCCAABBCCAABBCCAABBCCAABBCCAABBCCAABB";
+		num1 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People1 : ","Input",JOptionPane.QUESTION_MESSAGE));
+		while(num1 >= 100)
+		{
+			JOptionPane.showMessageDialog(null,"Error Score","Message",JOptionPane.ERROR_MESSAGE);
+			num1 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People1 : ","Input",JOptionPane.QUESTION_MESSAGE));
+			System.out.println();
+		}
+		num2 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People2 : ","Input",JOptionPane.QUESTION_MESSAGE));
+		while(num2 >= 100 || num2 == num1)
+		{
+			JOptionPane.showMessageDialog(null,"Error Score","Message",JOptionPane.ERROR_MESSAGE);
+			num2 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People2 : ","Input",JOptionPane.QUESTION_MESSAGE));
+			System.out.println();
+		}
+		num3 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People3 : ","Input",JOptionPane.QUESTION_MESSAGE));
+		while(num3 >= 100 || num3 == num2 || num3 == num1)
+		{
+			JOptionPane.showMessageDialog(null,"Error Score","Message",JOptionPane.ERROR_MESSAGE);
+			num3 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People3 : ","Input",JOptionPane.QUESTION_MESSAGE));
+			System.out.println();
+		}
+		System.out.printf("Enter People4 : ");
+		num4 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People4 : ","Input",JOptionPane.QUESTION_MESSAGE));
+		while(num4 >= 100 || num4 == num3 || num4 == num2 || num4 == num1)
+		{
+			JOptionPane.showMessageDialog(null,"Error Score","Message",JOptionPane.ERROR_MESSAGE);
+			num4 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People4 : ","Input",JOptionPane.QUESTION_MESSAGE));
+			System.out.println();
+		}
+		System.out.printf("Enter People5 : ");
+		num5 = gold.nextInt();
+		while(num5 >= 100 || num5 == num4 || num5 == num3 || num5 == num2 || num5 == num1)
+		{
+			JOptionPane.showMessageDialog(null,"Error Score","Message",JOptionPane.ERROR_MESSAGE);
+			num5 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People5 : ","Input",JOptionPane.QUESTION_MESSAGE));
+			System.out.println();
+		}
+		System.out.printf("Enter People6 : ");
+		num6 = gold.nextInt();
+		while(num6 >= 100 || num6 == num5 || num6 == num4 || num6 == num3 || num6 == num2 || num6 == num1)
+		{
+			JOptionPane.showMessageDialog(null,"Error Score","Message",JOptionPane.ERROR_MESSAGE);
+			num6 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People6 : ","Input",JOptionPane.QUESTION_MESSAGE));
+			System.out.println();
+		}
+		System.out.printf("Enter People7 : ");
+		num7 = gold.nextInt();
+		while(num7 >= 100 || num7 == num6 || num7 == num5 || num7 == num4 || num7 == num3 || num7 == num2 || num7 == num1)
+		{
+			JOptionPane.showMessageDialog(null,"Error Score","Message",JOptionPane.ERROR_MESSAGE);
+			num7 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People7 : ","Input",JOptionPane.QUESTION_MESSAGE));
+			System.out.println();
+		}
+		System.out.printf("Enter People8 : ");
+		num8 = gold.nextInt();
+		while(num8 >= 100 || num8 == num7 || num8 == num6 || num8 == num5 || num8 == num4 || num8 == num3 || num8 == num2 || num8 == num1)
+		{
+			JOptionPane.showMessageDialog(null,"Error Score","Message",JOptionPane.ERROR_MESSAGE);
+			num8 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People8 : ","Input",JOptionPane.QUESTION_MESSAGE));
+			System.out.println();
+		}
+		System.out.printf("Enter People9 : ");
+		num9 = gold.nextInt();
+		while(num9 >= 100 || num9 == num8 || num9 == num7 || num9 == num6 || num9 == num5 || num9 == num4 || num9 == num3 || num9 == num2 || num9 == num1)
+		{
+			JOptionPane.showMessageDialog(null,"Error Score","Message",JOptionPane.ERROR_MESSAGE);
+			num9 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter People9 : ","Input",JOptionPane.QUESTION_MESSAGE));
+			System.out.println();
+		}
 		
-		System.out.printf("Enter Round : ");
-		round = gold.nextInt();
-		while(round <=0 || round >100)
-		{
-			System.out.println("Error Round");
-			System.out.printf("Enter Round : ");
-			round = gold.nextInt();
-		}
-		System.out.println();
-
-		System.out.printf("Enter Answer : ");
-		answer = gold.next();
-		while(answer.length() != round)
-		{
-			System.out.println("Error Answer");
-			System.out.printf("Enter Answer : ");
-			answer = gold.next();
-		}
-		System.out.println();
 		
-		
-		for(int i=0;i<round;i++)
+		sum = num1+num2+num3+num4+num5+num6+num7+num8+num9;
+	}
+	
+	public void Print()
+	{
+		if((sum - num1 - num2) == 100)
 		{
-			if(answer.charAt(i) == Adrian.charAt(i))
-			{
-				num1 = num1 + 1;
-			}
-			if(answer.charAt(i) == Bruno.charAt(i))
-			{
-				num2 = num2 + 1;
-			}
-			if(answer.charAt(i) == Goran.charAt(i))
-			{
-				num3 = num3 + 1;
-			}
+			JOptionPane.showMessageDialog(null,"Sum = "+num3+" "+num4+" "+num5+" "+num6+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
 		}
-		
-		
-		
-		if(num1 == num2)
+		else if((sum - num1 - num3) == 100)
 		{
-			if(num1 == num3)
-			{
-				System.out.println(num1);
-				System.out.println("Adrian");
-				System.out.println("Bruno");
-				System.out.println("Goran");
-			}
-			else
-			{
-				System.out.println(num1);
-				System.out.println("Adrian");
-				System.out.println("Bruno");
-			}
+			JOptionPane.showMessageDialog(null,"Sum = "+num2+" "+num4+" "+num5+" "+num6+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
 		}
-		else if(num2 == num3)
+		else if((sum - num1 - num4) == 100)
 		{
-			System.out.println(num2);
-			System.out.println("Bruno");
-			System.out.println("Goran");
+			JOptionPane.showMessageDialog(null,"Sum = "+num2+" "+num3+" "+num5+" "+num6+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
 		}
-		else if(num1 == num3)
+		else if((sum - num1 - num5) == 100)
 		{
-			System.out.println(num1);
-			System.out.println("Adrian");
-			System.out.println("Goran");
+			JOptionPane.showMessageDialog(null,"Sum = "+num2+" "+num3+" "+num4+" "+num6+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
 		}
-		else if(num1 > num2)
+		else if((sum - num1 - num6) == 100)
 		{
-			if(num1 > num3)
-			{
-				System.out.println(num1);
-				System.out.println("Adrian");
-			}
-			else
-			{
-				System.out.println(num3);
-				System.out.println("Goran");
-			}
+			JOptionPane.showMessageDialog(null,"Sum = "+num2+" "+num3+" "+num4+" "+num5+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
 		}
-		else if(num2 > num3)
+		else if((sum - num1 - num7) == 100)
 		{
-			System.out.println(num2);
-			System.out.println("Bruno");
+			JOptionPane.showMessageDialog(null,"Sum = "+num2+" "+num3+" "+num4+" "+num5+" "+num6+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
 		}
-		else 
+		else if((sum - num1 - num8) == 100)
 		{
-			System.out.println(num3);
-			System.out.println("Goran");
+			JOptionPane.showMessageDialog(null,"Sum = "+num2+" "+num3+" "+num4+" "+num5+" "+num6+" "+num7+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num1 - num9) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num2+" "+num3+" "+num4+" "+num5+" "+num6+" "+num7+" "+num8,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num2 - num3) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num4+" "+num5+" "+num6+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num2 - num4) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num3+" "+num5+" "+num6+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num2 - num5) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num3+" "+num4+" "+num6+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num2 - num6) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num3+" "+num4+" "+num5+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num2 - num7) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num3+" "+num4+" "+num5+" "+num6+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num2 - num8) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num3+" "+num4+" "+num5+" "+num6+" "+num7+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num2 - num9) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num3+" "+num4+" "+num5+" "+num6+" "+num7+" "+num8,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num3 - num4) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num5+" "+num6+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num3 - num5) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num4+" "+num6+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num3 - num6) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num4+" "+num5+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num3 - num7) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num4+" "+num5+" "+num6+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num3 - num8) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num4+" "+num5+" "+num6+" "+num7+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num3 - num9) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num4+" "+num5+" "+num6+" "+num7+" "+num8,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num4 - num5) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num6+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num4 - num6) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num5+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num4 - num7) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num5+" "+num6+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num4 - num8) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num5+" "+num6+" "+num7+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num4 - num9) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num5+" "+num6+" "+num7+" "+num8,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num5 - num6) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num4+" "+num7+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num5 - num7) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num4+" "+num6+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num5 - num8) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num4+" "+num6+" "+num7+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num5 - num9) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num4+" "+num6+" "+num7+" "+num8,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num6 - num7) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num4+" "+num5+" "+num8+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num6 - num8) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num4+" "+num5+" "+num7+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num6 - num9) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num4+" "+num5+" "+num7+" "+num8,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num7 - num8) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num4+" "+num5+" "+num6+" "+num9,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num7 - num9) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num4+" "+num5+" "+num6+" "+num8,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if((sum - num8 - num9) == 100)
+		{
+			JOptionPane.showMessageDialog(null,"Sum = "+num1+" "+num2+" "+num3+" "+num4+" "+num5+" "+num6+" "+num7,"Message",JOptionPane.INFORMATION_MESSAGE);
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(null,"Error Score All","Message",JOptionPane.ERROR_MESSAGE);
 		}
 	}
-
+	
+	
+	public static void main(String[] args) 
+	{		
+		Seven_Dwarves SD = new Seven_Dwarves();
+		SD.getData();
+		SD.Print();
+	}
+		
 }
