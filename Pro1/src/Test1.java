@@ -1,7 +1,7 @@
 import java.io.*;
 import javax.swing.JOptionPane;
 import java.util.*;
-public class Seven_Dwarves 
+public class Test1 
 {
 	Scanner gold = new Scanner(System.in);
 	int num1,num2,num3,num4,num5,num6,num7,num8,num9,sum;
